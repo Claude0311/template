@@ -33,9 +33,6 @@ DB.once('open',()=>{
 		})
 	)
 	
-	app.get('/', (_,res) => {
-		res.send('hello world')
-	})
 	
 	app.use(api)
 	
