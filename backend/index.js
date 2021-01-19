@@ -4,7 +4,7 @@ import DB from './model/db.js'
 import api from './api/api'
 import session from 'express-session'
 import connect from 'connect-mongo'
-
+import moment from 'moment'
 const app = express()
 DB.once('open',()=>{
 	console.log('mongoDB connected')
@@ -37,7 +37,7 @@ DB.once('open',()=>{
 	app.use(api)
 	
 	app.listen(process.env.PORT || 4000,  () => {
-		// require('./util/crawler')(true)
+		console.log(moment())
 		console.log('server connect')
 		console.log(`port name: ${process.env.PORT || 4000}`)
 	})
